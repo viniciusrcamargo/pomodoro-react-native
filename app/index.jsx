@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react"; // Importe useEffect
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import FokusButton from "../components/FokusButton"; // Certifique-se de que os caminhos estão corretos
 import ActionButton from "../components/ActionButton"; // Certifique-se de que os caminhos estão corretos
+import { IconPause, IconPlay } from "../components/icons"; // Certifique-se de que os caminhos estão corretos
 
 const pomodoro = [
   {
@@ -120,6 +121,7 @@ export default function Index() {
         <FokusButton
           onPress={toggleTimer}
           title={timerRunning ? "Pausar" : "Começar"}
+          icon={timerRunning ? <IconPause/> : <IconPlay />}
         />
       </View>
       <View style={styles.footer}>
